@@ -8,7 +8,6 @@ const MenuItem = ({item}) => {
       setDisplayItem(prevData=>!prevData
       )
   }
- 
 
 
   return (

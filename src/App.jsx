@@ -8,6 +8,7 @@ import Accordition from './components/Accordtion/Accordition'
 import ImageSlider from './components/ImageSlider/ImageSlider'
 import LoadMore from './components/LoadMoreProduct/LoadMore'
 import TreeView from './components/TreeView/TreeView'
+import RqCodeGenerator from './components/RqCodeGenerator'
 function App() {
 
 
@@ -18,7 +19,8 @@ function App() {
       {/* <StarRating nbOfStars={10}/> */}
     {/* <ImageSlider nbOfImages={10}/> */}
     {/* <LoadMore limit={100} nbOfProduct={20}/> */}
-    <TreeView/>
+    {/* <TreeView/> */}
+    <RqCodeGenerator/>
     </>
   )
 }
