@@ -9,6 +9,8 @@ import TreeView from './components/TreeView/TreeView'
 import RqCodeGenerator from './components/RqCodeGenerator/RqCodeGenerator'
 import SwitchTheme from './components/SwitchTheme/SwitchTheme'
 import ScrollIndicator from './components/ScrollIndicator/ScrollIndicator'
+import Tabs from './components/Tabs/Tabs'
+import MainTabs from './components/Tabs/MainTabs'
 function App() {
 
 
@@ -23,7 +25,8 @@ function App() {
     {/* <RqCodeGenerator/> */}
 
     {/* <SwitchTheme/> */}
-    <ScrollIndicator/>
+    {/* <ScrollIndicator/> */}
+    <MainTabs/>
     </div>
   )
 }
