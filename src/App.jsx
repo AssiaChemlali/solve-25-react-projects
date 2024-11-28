@@ -8,6 +8,7 @@ import LoadMore from './components/LoadMoreProduct/LoadMore'
 import TreeView from './components/TreeView/TreeView'
 import RqCodeGenerator from './components/RqCodeGenerator/RqCodeGenerator'
 import SwitchTheme from './components/SwitchTheme/SwitchTheme'
+import ScrollIndicator from './components/ScrollIndicator/ScrollIndicator'
 function App() {
 
 
@@ -21,7 +22,8 @@ function App() {
     {/* <TreeView/> */}
     {/* <RqCodeGenerator/> */}
 
-    <SwitchTheme/>
+    {/* <SwitchTheme/> */}
+    <ScrollIndicator/>
     </div>
   )
 }
