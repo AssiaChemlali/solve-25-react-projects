@@ -12,6 +12,7 @@ import ScrollIndicator from './components/ScrollIndicator/ScrollIndicator'
 import Tabs from './components/Tabs/Tabs'
 import MainTabs from './components/Tabs/MainTabs'
 import ModalPopup from './components/ModalPopup/ModalPopup'
+import GithubProfile from './components/GithubProfileFinder/GithubProfile'
 function App() {
 
 
@@ -28,7 +29,8 @@ function App() {
     {/* <SwitchTheme/> */}
     {/* <ScrollIndicator/> */}
     {/* <MainTabs/> */}
-    <ModalPopup/>
+    {/* <ModalPopup/> */}
+    <GithubProfile/>
     </div>
   )
 }
