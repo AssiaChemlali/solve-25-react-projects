@@ -11,6 +11,7 @@ import SwitchTheme from './components/SwitchTheme/SwitchTheme'
 import ScrollIndicator from './components/ScrollIndicator/ScrollIndicator'
 import Tabs from './components/Tabs/Tabs'
 import MainTabs from './components/Tabs/MainTabs'
+import ModalPopup from './components/ModalPopup/ModalPopup'
 function App() {
 
 
@@ -26,7 +27,8 @@ function App() {
 
     {/* <SwitchTheme/> */}
     {/* <ScrollIndicator/> */}
-    <MainTabs/>
+    {/* <MainTabs/> */}
+    <ModalPopup/>
     </div>
   )
 }
