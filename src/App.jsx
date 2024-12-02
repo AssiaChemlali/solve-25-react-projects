@@ -14,6 +14,7 @@ import MainTabs from './components/Tabs/MainTabs'
 import ModalPopup from './components/ModalPopup/ModalPopup'
 import GithubProfile from './components/GithubProfileFinder/GithubProfile'
 import SearchAutocomplete from './components/SearchAutocomplete/SearchAutocomplete'
+import TicTacToe from './components/TicTacToe/TicTacToe'
 function App() {
 
 
@@ -32,7 +33,8 @@ function App() {
     {/* <MainTabs/> */}
     {/* <ModalPopup/> */}
     {/* <GithubProfile/> */}
-    <SearchAutocomplete/>
+    {/* <SearchAutocomplete/> */}
+    <TicTacToe/>
     </div>
   )
 }
