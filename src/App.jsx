@@ -13,6 +13,7 @@ import Tabs from './components/Tabs/Tabs'
 import MainTabs from './components/Tabs/MainTabs'
 import ModalPopup from './components/ModalPopup/ModalPopup'
 import GithubProfile from './components/GithubProfileFinder/GithubProfile'
+import SearchAutocomplete from './components/SearchAutocomplete/SearchAutocomplete'
 function App() {
 
 
@@ -30,7 +31,8 @@ function App() {
     {/* <ScrollIndicator/> */}
     {/* <MainTabs/> */}
     {/* <ModalPopup/> */}
-    <GithubProfile/>
+    {/* <GithubProfile/> */}
+    <SearchAutocomplete/>
     </div>
   )
 }
