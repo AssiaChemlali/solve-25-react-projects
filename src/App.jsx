@@ -18,6 +18,7 @@ import TicTacToe from './components/TicTacToe/TicTacToe'
 import FeatureFlag from './components/FeatureFlag/FeatureFlag'
 import UseFetchHook from './components/UseFetchhook/UseFetchHook'
 import UseOutsideHook from './components/UseOutsideHook/UseOutsideHook'
+import UseWindowResizeHook from './components/UseWindowResize/UseWindowResizeHook'
 function App() {
 
 
@@ -40,7 +41,8 @@ function App() {
       {/* <TicTacToe/> */}
       {/* <FeatureFlag/> */}
       {/* <UseFetchHook/> */}
-      <UseOutsideHook/>
+      {/* <UseOutsideHook/> */}
+      <UseWindowResizeHook/>
     </div>
   )
 }
