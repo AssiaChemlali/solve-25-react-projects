@@ -16,6 +16,8 @@ import GithubProfile from './components/GithubProfileFinder/GithubProfile'
 import SearchAutocomplete from './components/SearchAutocomplete/SearchAutocomplete'
 import TicTacToe from './components/TicTacToe/TicTacToe'
 import FeatureFlag from './components/FeatureFlag/FeatureFlag'
+import UseFetchHook from './components/UseFetchhook/UseFetchHook'
+import UseOutsideHook from './components/UseOutsideHook/UseOutsideHook'
 function App() {
 
 
@@ -36,7 +38,9 @@ function App() {
       {/* <GithubProfile/> */}
       {/* <SearchAutocomplete/> */}
       {/* <TicTacToe/> */}
-      <FeatureFlag/>
+      {/* <FeatureFlag/> */}
+      {/* <UseFetchHook/> */}
+      <UseOutsideHook/>
     </div>
   )
 }
