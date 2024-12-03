@@ -2,10 +2,6 @@ import React, { useRef } from 'react'
 
 const ScrollSection = () => {
   const ref=useRef()
-  const secondSection=useRef()
-  const thirdSection=useRef()
-
-
   const data=[
     {
       label:"first section",
