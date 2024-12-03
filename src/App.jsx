@@ -20,6 +20,7 @@ import UseFetchHook from './components/UseFetchhook/UseFetchHook'
 import UseOutsideHook from './components/UseOutsideHook/UseOutsideHook'
 import UseWindowResizeHook from './components/UseWindowResize/UseWindowResizeHook'
 import ScrollTopBottom from './components/ScrollTopBottom/ScrollTopBottom'
+import ScrollSection from './components/ScrollToParticularSection/ScrollSection'
 function App() {
 
 
@@ -44,7 +45,8 @@ function App() {
       {/* <UseFetchHook/> */}
       {/* <UseOutsideHook/> */}
       {/* <UseWindowResizeHook/> */}
-      <ScrollTopBottom/>
+      {/* <ScrollTopBottom/> */}
+      <ScrollSection/>
     </div>
   )
 }
