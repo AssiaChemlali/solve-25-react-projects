@@ -19,6 +19,7 @@ import FeatureFlag from './components/FeatureFlag/FeatureFlag'
 import UseFetchHook from './components/UseFetchhook/UseFetchHook'
 import UseOutsideHook from './components/UseOutsideHook/UseOutsideHook'
 import UseWindowResizeHook from './components/UseWindowResize/UseWindowResizeHook'
+import ScrollTopBottom from './components/ScrollTopBottom/ScrollTopBottom'
 function App() {
 
 
@@ -42,7 +43,8 @@ function App() {
       {/* <FeatureFlag/> */}
       {/* <UseFetchHook/> */}
       {/* <UseOutsideHook/> */}
-      <UseWindowResizeHook/>
+      {/* <UseWindowResizeHook/> */}
+      <ScrollTopBottom/>
     </div>
   )
 }
