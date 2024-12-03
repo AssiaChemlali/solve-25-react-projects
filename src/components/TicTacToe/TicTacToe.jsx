@@ -39,7 +39,7 @@ const TicTacToe = () => {
     ]
 
     for (let i = 0; i < winningPattens.length; i++) {
-      const [x,y,z]=winningPattens[i]
+     const [x,y,z]=winningPattens[i]
       if (boxs[x].player === boxs[y].player
         && boxs[x].player ===boxs[z].player) {
           winner= boxs[x].player

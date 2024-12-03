@@ -15,26 +15,28 @@ import ModalPopup from './components/ModalPopup/ModalPopup'
 import GithubProfile from './components/GithubProfileFinder/GithubProfile'
 import SearchAutocomplete from './components/SearchAutocomplete/SearchAutocomplete'
 import TicTacToe from './components/TicTacToe/TicTacToe'
+import FeatureFlag from './components/FeatureFlag/FeatureFlag'
 function App() {
 
 
   return (
     < div >
-    {/* <Accordition/> */}
-    {/* <ColorGenerator/> */}
-    {/* <StarRating nbOfStars={10}/> */}
-    {/* <ImageSlider nbOfImages={10}/> */}
-    {/* <LoadMore limit={100} nbOfProduct={20}/> */}
-    {/* <TreeView/> */}
-    {/* <RqCodeGenerator/> */}
+      {/* <Accordition/> */}
+      {/* <ColorGenerator/> */}
+      {/* <StarRating nbOfStars={10}/> */}
+      {/* <ImageSlider nbOfImages={10}/> */}
+      {/* <LoadMore limit={100} nbOfProduct={20}/> */}
+      {/* <TreeView/> */}
+      {/* <RqCodeGenerator/> */}
 
-    {/* <SwitchTheme/> */}
-    {/* <ScrollIndicator/> */}
-    {/* <MainTabs/> */}
-    {/* <ModalPopup/> */}
-    {/* <GithubProfile/> */}
-    {/* <SearchAutocomplete/> */}
-    <TicTacToe/>
+      {/* <SwitchTheme/> */}
+      {/* <ScrollIndicator/> */}
+      {/* <MainTabs/> */}
+      {/* <ModalPopup/> */}
+      {/* <GithubProfile/> */}
+      {/* <SearchAutocomplete/> */}
+      {/* <TicTacToe/> */}
+      <FeatureFlag/>
     </div>
   )
 }
