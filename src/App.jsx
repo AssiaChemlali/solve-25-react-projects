@@ -21,6 +21,7 @@ import UseOutsideHook from './components/UseOutsideHook/UseOutsideHook'
 import UseWindowResizeHook from './components/UseWindowResize/UseWindowResizeHook'
 import ScrollTopBottom from './components/ScrollTopBottom/ScrollTopBottom'
 import ScrollSection from './components/ScrollToParticularSection/ScrollSection'
+import Weather from './components/WheatherApp/Weather'
 function App() {
 
 
@@ -33,7 +34,6 @@ function App() {
       {/* <LoadMore limit={100} nbOfProduct={20}/> */}
       {/* <TreeView/> */}
       {/* <RqCodeGenerator/> */}
-
       {/* <SwitchTheme/> */}
       {/* <ScrollIndicator/> */}
       {/* <MainTabs/> */}
@@ -46,7 +46,8 @@ function App() {
       {/* <UseOutsideHook/> */}
       {/* <UseWindowResizeHook/> */}
       {/* <ScrollTopBottom/> */}
-      <ScrollSection/>
+      {/* <ScrollSection/> */}
+    <Weather/>
     </div>
   )
 }
