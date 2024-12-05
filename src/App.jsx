@@ -22,11 +22,12 @@ import UseWindowResizeHook from './components/UseWindowResize/UseWindowResizeHoo
 import ScrollTopBottom from './components/ScrollTopBottom/ScrollTopBottom'
 import ScrollSection from './components/ScrollToParticularSection/ScrollSection'
 import Weather from './components/WheatherApp/Weather'
+
+import FoodApp from './components/FoodRecipe/FoodApp'
 function App() {
 
-
   return (
-    < div >
+<>
       {/* <Accordition/> */}
       {/* <ColorGenerator/> */}
       {/* <StarRating nbOfStars={10}/> */}
@@ -47,8 +48,9 @@ function App() {
       {/* <UseWindowResizeHook/> */}
       {/* <ScrollTopBottom/> */}
       {/* <ScrollSection/> */}
-    <Weather/>
-    </div>
+    {/* <Weather/> */}
+    <FoodApp/>
+           </>
   )
 }
 
