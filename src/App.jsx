@@ -25,6 +25,11 @@ import Weather from './components/WheatherApp/Weather'
 
 import FoodApp from './components/FoodRecipe/FoodApp'
 import ShoppingApp from './components/ShopingCartApp/ShoppingApp'
+import store from './components/ShopingCartApp/store/store'
+import { Provider } from 'react-redux'
+import { BrowserRouter ,Routes,Route} from 'react-router-dom'
+import Navbar from './components/ShopingCartApp/Navbar'
+import Cart from './components/ShopingCartApp/Cart'
 function App() {
 
   return (
@@ -51,7 +56,22 @@ function App() {
       {/* <ScrollSection/> */}
     {/* <Weather/> */}
     {/* <FoodApp/> */}
-    <ShoppingApp/>
+
+
+    <Provider store={store}>
+      <BrowserRouter>
+          <div className='p-10 container'>
+              <Navbar/>
+              <Routes>
+                <Route path="/" element={<ShoppingApp/>}/>
+                <Route path="/cart" element={<Cart/>}/>
+              </Routes>
+          </div>
+      </BrowserRouter>
+    </Provider>
+  
+
+
            </>
   )
 }

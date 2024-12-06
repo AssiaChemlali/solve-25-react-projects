@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from './Navbar'
-// import ProductCard from './productCard'
+import ProductCard from './productCard'
 
 const ShoppingApp = () => {
   const [products,setProducts]=useState([])
@@ -11,47 +10,43 @@ const ShoppingApp = () => {
   useEffect(()=>{
     async function getProducts(){
       try {
-
-         setLoading(true)
-          const url='https://freetestapi.com/api/v1/products?limit=5'
+        setLoading(true)
+        const url='https://dummyjson.com/products?limit=10'
         const response=await fetch(url)
         const data=await response.json()
        
         if(data){
-          setProducts(data)
-          console.log(data)
+          setProducts(data.products)
           setLoading(false)
         }
-      
       } catch (error) {
-        console.log(error.message)
         setLoading(false)
       }
 
   }
     getProducts()
   },[])
+
   if(loading){
     return <>Loading Data ...</>
   }
 
-// console.log(products)
   return (
-    <div className='p-10 container'>
-     <Navbar/>
-
-      <div className='grid sm:grid-cols-2  md:grid-cols-3 gap-5 mt-10'>
+     <>
+      <div className='grid sm:grid-cols-2  md:grid-cols-4 gap-5 mt-10'>
         {
           (products?.map((product)=>{
-            // return (
-            // //  <ProductCard product={product} />
-            // )
-              })) 
+            return (
+              <ProductCard 
+              product={product} 
+              key={product.id}/>
+            )
+          })) 
              
         }
       </div>
       
-    </div>
+    </>
   )
 }
 
