@@ -1,10 +1,12 @@
 import React from 'react'
 import RecipeCard from './RecipeCard'
 
-const FoodRecipe = ({recipts}) => {
-
+const FoodRecipe = ({loading,recipts}) => {
+  if(loading){
+    return <p className='mt-10 text-center text-xl font-bold'>loading data ...</p>
+  }
   return (
-     <div className=''>
+     <>
       { recipts && recipts?.length > 0 
         ? (
           <div className='mt-10 grid gap-4 sm:grid-cols-3'>
@@ -17,12 +19,11 @@ const FoodRecipe = ({recipts}) => {
             }
           </div>
         ):
-        
-        <h1 className='text-2xl mt-10 text-center font-bold'> Nothing to show . please search something</h1> 
+        <h1 className='text-2xl mt-10 text-center font-bold capitalize'> Nothing to show . please search something</h1> 
         
       
       }
-     </div>
+     </>
   )
 }
 

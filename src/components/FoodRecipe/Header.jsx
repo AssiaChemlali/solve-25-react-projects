@@ -1,12 +1,14 @@
 import React, { useRef } from 'react'
-import { Outlet,Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Header = ({onSearch}) => {
   const ref=useRef()
-  
+  const navigate=useNavigate()
   function handleKeyPress(e){
+    
     if(e.key==="Enter"){
         onSearch(ref.current.value)
+         navigate('/')
     }
   
   }

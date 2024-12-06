@@ -6,7 +6,7 @@ import RecipeDetails from './RecipeDetails'
 import FoodRecipe from './FoodRecipe'
 
 const FoodApp = () => {
-  const [recipeName, setRecipeName] = useState()
+  const [recipeName, setRecipeName] = useState("")
   const [recipts, setRecipets] = useState([])
   const [loading, setLoading] = useState(false)
   const [favorites, setfavorites] = useState([])
@@ -42,29 +42,30 @@ const FoodApp = () => {
   }
 
   function handleAddRecipe(reccite) {
-    setfavorites(prevdata => {
-      return [...prevdata, reccite]
-    })
+    let updateFavorites=[...favorites]
+    const index=updateFavorites?.findIndex((item)=>item.id===reccite.id)
+
+    if(index ===-1){
+      updateFavorites=[...updateFavorites,reccite]
+    }else{
+      updateFavorites.splice(index,1)
+    }
+
+    setfavorites(updateFavorites)
+
   }
 
-  function handleRemoveRecipe(id) {
-    setfavorites(prevdata => {
-      const updateFavorites = prevdata.filter((item) => item.id !== id)
-      return updateFavorites
-    })
-  }
+  
+
 
   return (
     <BrowserRouter>
       <div className='p-10 '>
         <Header onSearch={handleSearchRecipe} />
-        {loading && <p className='mt-10 text-center text-xl font-bold'>loading data ...</p>}
-
-
         <Routes>
           <Route
             path="/"
-            element={<FoodRecipe recipts={recipts} />} />
+            element={<FoodRecipe recipts={recipts} loading={loading}/>} />
 
           <Route
             path="/favorites"
@@ -72,7 +73,7 @@ const FoodApp = () => {
 
           <Route
             path="/recipeDetails/:id"
-            element={<RecipeDetails meals={recipts} onAdd={handleAddRecipe} onRemove={handleRemoveRecipe} />} />
+            element={<RecipeDetails  favorites={favorites} onAdd={handleAddRecipe}  />} />
 
         </Routes>
       </div>
