@@ -24,6 +24,7 @@ import ScrollSection from './components/ScrollToParticularSection/ScrollSection'
 import Weather from './components/WheatherApp/Weather'
 
 import FoodApp from './components/FoodRecipe/FoodApp'
+import ShoppingApp from './components/ShopingCartApp/ShoppingApp'
 function App() {
 
   return (
@@ -49,7 +50,8 @@ function App() {
       {/* <ScrollTopBottom/> */}
       {/* <ScrollSection/> */}
     {/* <Weather/> */}
-    <FoodApp/>
+    {/* <FoodApp/> */}
+    <ShoppingApp/>
            </>
   )
 }
