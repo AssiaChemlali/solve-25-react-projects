@@ -1,43 +1,40 @@
 import React from 'react'
-import { useSelector,useDispatch } from 'react-redux'
-import { addProduct,removeProduct } from './store/CartSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { addProduct, removeProduct } from './store/CartSlice'
 
-const ProductCard = ({product}) => {
+const ProductCard = ({ product }) => {
 
-  const dispatch=useDispatch()
-  const carts=useSelector(state=>state.cart)
+  const dispatch = useDispatch()
+  const { cart } = useSelector(state => state)
 
-  function handleAddToCart(){
-      const index= carts.findIndex((item)=>item.id===product.id)
+  function handleCart() {
+    const index = cart.findIndex((item) => item.id === product.id)
+    if (index === -1) {
+      dispatch(addProduct(product))
+    } else {
+      dispatch(removeProduct(product?.id))
 
-      if(index===-1){
-        console.log("add")
-        dispatch(addProduct(product))
-      }else{
-        console.log("remove")
-        dispatch(removeProduct(product.id))
-     
-      }
-
-      
     }
 
-   
+
+  }
+
+
   return (
     <div className='border border-orange-500 border-2 p-4 rounded-xl text-center'>
-        <img src={product.thumbnail} alt="" className='border'/>
-        <h4 className='font-semibold my-3'>{product.title}</h4>
-        <button 
-            onClick={handleAddToCart}
-            className='bg-orange-500 px-5 py-2 text-white rounded-xl font-semibold cursor-pointer capitalize'>
+      <img src={product?.thumbnail} alt="" className='border rounded-xl' />
+      <h4 className='font-semibold my-3'>{product?.title}</h4>
+      <button
+        onClick={handleCart}
+        className='bg-orange-500 px-5 py-2 text-white rounded-xl font-semibold cursor-pointer capitalize'>
 
-          {carts.findIndex((item)=>item.id===product.id) === -1 
-          ? ' Add to cart'
-          :'remove from cart'
-          }
-          
-          
-          </button>
+        {cart.some((item) => item?.id === product?.id)
+          ? 'remove from cart'
+          : 'Add to cart'
+        }
+
+
+      </button>
     </div>
   )
 }
