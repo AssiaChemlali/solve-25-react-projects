@@ -30,6 +30,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter ,Routes,Route} from 'react-router-dom'
 import Navbar from './components/ShopingCartApp/Navbar'
 import Cart from './components/ShopingCartApp/Cart'
+import TrackerApp from './components/TrackerApp/TrackerApp'
 function App() {
 
   return (
@@ -58,7 +59,7 @@ function App() {
     {/* <FoodApp/> */}
 
 
-    <Provider store={store}>
+    {/* <Provider store={store}>
       <BrowserRouter>
           <div className='p-10 container'>
               <Navbar/>
@@ -68,7 +69,8 @@ function App() {
               </Routes>
           </div>
       </BrowserRouter>
-    </Provider>
+    </Provider> */}
+    <TrackerApp/>
   
 
 
