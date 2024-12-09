@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Modal from './Modal'
-import { PieChart } from '@mui/x-charts'
+import Chart from './Chart'
+import Display from './Display'
+import Summary from './Summary'
+
 const TrackerApp = () => {
 
   const ref=useRef()
@@ -15,23 +18,22 @@ const TrackerApp = () => {
   }
 
 
- function addTransition(trans){
-    setBalance(trans.amout)
+ function addTransition(newTransaction){
+    setBalance(newTransaction.amout)
     setTransaction(prevData=>{
-      return [...prevData,trans]
+      return [...prevData,newTransaction]
     })
-    if(trans.type==="income"){
-      const total= TotalIncome + trans.amout
-      setTotalIncome(total)
-    }
-    if(trans.type==="expense"){
-      const total= TotalExpensive + trans.amout
-      setTotalExpensive(total)
-    }
 
 
+    if(newTransaction.type==="income" ){
+      const income= TotalIncome + newTransaction.amout 
+      setTotalIncome(income)
+    }else{
+      const expense= TotalExpensive + newTransaction.amout
+      setTotalExpensive(expense)
+    }
+    
  }
-
 
 
   return (
@@ -45,55 +47,24 @@ const TrackerApp = () => {
 
 
       <div className='flex flex-row w-full justify-between mb-10 bg-gray-100'>
-        <div className='p-5 '>
-            <h2 className='font-bold'>Balance is : $ {balance}</h2>
-            <h3> Total income: $ {TotalIncome}</h3>
-            <h3>Total Experience: $ {TotalExpensive}</h3>
-        </div>
+       
+        <Summary 
+        TotalExpensive={TotalExpensive} 
+        balance={balance}
+        TotalIncome={TotalIncome}
+        />
 
-        <div className='border p-5 '>
-          <PieChart
-            series={[
-                    {
-                      data: [
-                        { id: 0, value: TotalIncome, label: 'income' },
-                        { id: 1, value: TotalExpensive, label: 'Expene' },
-                      ],
-                    },
-                  ]}
-                  width={400}
-                  height={200}
-          />
-        
-        
-        </div>
+        <Chart 
+        TotalExpensive={TotalExpensive} 
+        TotalIncome={TotalIncome}/>
       </div>
 
-      <div className='flex flex-row w-full justify-between bg-red-100 p-4'>
-        <ul>
-          <li className='font-bold'>Income  :</li>
-          {
-            transaction.length >0 &&
-            transaction?.map((item,index)=>{
-              if(item.type==="income"){
-                 return(<li key={index}> {item.type} : {item.amout}$</li>)
-              }
-            })
-          }
-        </ul>
-        <ul>
-          <li className='font-bold'>Expense:</li>
-          {
-            transaction.length >0 &&
-            transaction?.map((item,index)=>{
-                if(item.type==="expense")
-                  return(<li key={index}>{item.type} : {item.amout}$</li>)
-              })
-          }
-        </ul>
+      <div className='flex flex-row w-full justify-between bg-gray-100 p-4 rounded'>
+        <Display type="income" transaction={transaction}/>
+        <Display type="expense" transaction={transaction}/>
       </div>
       
-      <Modal ref={ref} onTrans={addTransition}/>
+      <Modal ref={ref} onAddTransition={addTransition}/>
 
     </div>
   )

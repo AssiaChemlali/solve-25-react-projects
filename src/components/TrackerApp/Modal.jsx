@@ -1,6 +1,6 @@
 import React, { forwardRef, useRef, useState } from 'react'
 
-const Modal = forwardRef(({onTrans},ref) => {
+const Modal = forwardRef(({onAddTransition},ref) => {
 
   const refDesc=useRef()
   const refAmout=useRef()
@@ -12,20 +12,21 @@ const Modal = forwardRef(({onTrans},ref) => {
   }
   
   function handleAdd(){
-    const desc=refDesc.current.value
-    const amout=parseInt(refAmout.current.value)
-    let type;
+      const desc=refDesc.current.value
+      const amout=parseInt(refAmout.current.value)
+      let type;
 
-   if(refIncome.current.checked){
-      type="income"
-   }
-   if(refExpense.current.checked){
-      type="expense"
+      if(refIncome.current.checked){
+          type="income"
+      }
+      if(refExpense.current.checked){
+          type="expense"
+      }
+
+      onAddTransition({desc,amout,type})
+      ref.current.close()
   }
 
-    onTrans({desc,amout,type})
-    ref.current.close()
-  }
   return (
     <>
     <div className='z-50 bg-black opacity-1 w-full '></div>
@@ -56,9 +57,9 @@ const Modal = forwardRef(({onTrans},ref) => {
      </div>
 
      <div className='flex  gap-2 mt-3'>
-      <input type="radio" name="trans" id="icome" ref={refIncome} />
+      <input type="radio" name="type" id="icome" ref={refIncome} />
       <label htmlFor="income">Income</label>
-      <input type="radio" name="trans" id="expense"  ref={refExpense}/>
+      <input type="radio" name="type" id="expense"  ref={refExpense}/>
       <label htmlFor="expense">Expense</label>
      </div>
 
