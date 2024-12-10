@@ -31,6 +31,7 @@ import { BrowserRouter ,Routes,Route} from 'react-router-dom'
 import Navbar from './components/ShopingCartApp/Navbar'
 import Cart from './components/ShopingCartApp/Cart'
 import TrackerApp from './components/TrackerApp/TrackerApp'
+import Blog from './components/BlogApp/Blog'
 function App() {
 
   return (
@@ -70,8 +71,10 @@ function App() {
           </div>
       </BrowserRouter>
     </Provider> */}
-    <TrackerApp/>
-  
+    {/* <TrackerApp/> */}
+      <BrowserRouter>
+      <Blog/>
+      </BrowserRouter>
 
 
            </>
