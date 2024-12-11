@@ -13,7 +13,7 @@ const PostCard = ({post,onDelete}) => {
       <p>{post?.desc} </p>
       <div className='flex gap-4 mt-3'>
         <Link 
-        to={"/addpost" }
+        to={"/add" }
         state={post}
         className='font-bold cursor-pointer hover:text-red-500' 
         >
@@ -21,6 +21,7 @@ const PostCard = ({post,onDelete}) => {
         </Link>
 
         <Link 
+        // to={`/delete:id`}
         className='font-bold' 
         onClick={handleDeletePost}>Delete</Link>
       </div>

@@ -1,16 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter,Routes,Route,Link } from 'react-router-dom'
 import AddPost from './AddPost'
 import Navbar from './Navbar'
 import ListPosts from './ListPosts'
+import axios from 'axios'
+
 const Blog = () => {
 
   const[blog,setBlog]=useState([])
 
-  function handleAddPost(newPost){
+async function fetchListOfBlogs(){
+  const response = await axios.get("http://localhost:5173/api/blogs");
+  const result = await response.data;
+  if(result){
+    setBlog(result)
+  }
+}
+ async function handleAddPost(newPost){
     setBlog(prevBlog=>{
       return[...prevBlog,newPost]
     })
+
+   
+
   }
 
   function handleEditPost(editpost){
@@ -28,6 +40,7 @@ const Blog = () => {
    }
 
 
+
   return (
  
       <div className='p-10 font-serif'>
@@ -40,7 +53,7 @@ const Blog = () => {
           blog={blog} 
           onDelete={handleDeletePost}/>}/>
           <Route  
-          path="/addpost" 
+          path="/add" 
           element={<AddPost 
           onAdd={handleAddPost} 
           onEdit={handleEditPost}/>}/>

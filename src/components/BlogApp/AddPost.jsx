@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useRef } from 'react'
 import { useNavigate,useLocation } from 'react-router-dom'
+
+
 const AddPost = ({onAdd,onEdit}) => {
 
   const titleRef=useRef()
@@ -22,7 +24,7 @@ const AddPost = ({onAdd,onEdit}) => {
       }
     },[])
 
-  function hnadleAddPost(e){
+  async function hnadleAddPost(e){
     
     e.preventDefault()
     const title=titleRef.current.value
@@ -35,8 +37,17 @@ const AddPost = ({onAdd,onEdit}) => {
       onEdit({id,title,desc})
     }
      navigate('/')
-  }
 
+    
+
+
+   
+  
+
+
+}
+
+ 
   return (
     <form className='flex flex-col gap-3' onSubmit={hnadleAddPost} >
       <h2 className='text-xl font-bold capitalize'> Add a new post</h2>
@@ -48,9 +59,13 @@ const AddPost = ({onAdd,onEdit}) => {
         className='border p-2'
       />
       <p>Description</p>
-      <textarea 
-     
-      name="desc" id="" rows="5" ref={descRef} className='border p-2'></textarea>
+      <textarea  
+      name="desc" 
+      id="" 
+      rows="5" 
+      ref={descRef} 
+      className='border p-2'></textarea>
+
       <button type="submit" className='capitalize bg-black text-white p-3 font-bold hover:bg-red-500'>
         {isddedPost  ? 'add post':'edit post'}
         

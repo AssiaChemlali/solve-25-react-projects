@@ -13,7 +13,7 @@ const Navbar = () => {
             className='font-bold capitalize hover:text-red-500'>Home</Link>
 
             <Link 
-            to ="/addpost" 
+            to ="/add" 
             className='font-bold capitalize hover:text-red-500'>Add blog</Link>
           </ul>
         </nav>
